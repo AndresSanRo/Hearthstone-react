@@ -12,7 +12,7 @@
 /build
 
 #secrets
-/secrets
+/src/secrets
 
 # misc
 .DS_Store
