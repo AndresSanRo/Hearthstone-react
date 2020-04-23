@@ -8,11 +8,14 @@ const baseHeaders = {
 
 const getAllCards = () => {
     const url = `${baseUrl}/cards`;
-    const headers = {
-        method: 'GET',    
-        ...baseHeaders,    
+    const fetchOtions = {
+        method: 'GET',
+        headers: {
+            ...baseHeaders,
+        }        
     }
-    fetch(url, headers)
+    fetch(url, fetchOtions)
+    .then(response => response.json())
     .then(response => {
         console.log(response);
     })
