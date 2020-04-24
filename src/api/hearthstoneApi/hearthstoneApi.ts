@@ -1,4 +1,5 @@
 import { secrets } from '../../secrets'
+import { Card } from '../../model';
 
 const baseUrl = `https://${secrets.host}`;
 const baseHeaders = {
@@ -6,7 +7,7 @@ const baseHeaders = {
     "x-rapidapi-key": secrets.apiKey,
 }
 
-const getAllCards = () => {
+const getAllCards = (callback: Function): void => {
     const url = `${baseUrl}/cards`;
     const fetchOtions = {
         method: 'GET',
@@ -16,8 +17,13 @@ const getAllCards = () => {
     }
     fetch(url, fetchOtions)
     .then(response => response.json())
-    .then(response => {
-        console.log(response);
+    .then((response) => {
+        let cards: Card[] = [];
+        Object.keys(response).forEach(set => {            
+            cards = [...cards, ...response[set]]
+        })
+        cards.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
+        callback(cards);
     })
     .catch(error => {
         console.error(error);

@@ -1,11 +1,6 @@
 import React from 'react';
-import { hearthstoneApi } from '../../api';
+import { CardWiki } from '../cardWiki';
 
 export function Home() {
-
-    React.useEffect(() => {
-        hearthstoneApi.getAllCards();
-    }, [])
-
-    return <h1>Hello world!</h1>
+    return <CardWiki />
 }
