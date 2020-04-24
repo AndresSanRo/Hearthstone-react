@@ -1,5 +1,5 @@
 import { secrets } from '../../secrets'
-import { Card } from '../../model';
+import { Card, locales } from '../../model';
 
 const baseUrl = `https://${secrets.host}`;
 const baseHeaders = {
@@ -7,8 +7,8 @@ const baseHeaders = {
     "x-rapidapi-key": secrets.apiKey,
 }
 
-const getAllCards = (callback: Function): void => {
-    const url = `${baseUrl}/cards`;
+const getAllCards = (callback: Function, locale: string = locales.enUS): void => {
+    const url = `${baseUrl}/cards?locale=${locale}`;
     const fetchOtions = {
         method: 'GET',
         headers: {
