@@ -1,0 +1,17 @@
+export enum locales {
+    deDE = "deDE",
+    enGB="enGB",
+    enUS="enUS",
+    esES="esES",
+    esMX="esMX",
+    frFR="frFR",
+    itIT="itIT",
+    koKR="koKR",
+    plPL="plPL",
+    ptBR="ptBR",
+    ruRU="ruRU",
+    zhCN="zhCN",
+    zhTW="zhTW",
+    jaJP="jaJP",
+    thTH="thTH",
+}
