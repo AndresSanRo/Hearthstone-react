@@ -2,7 +2,8 @@
 
 div.navbar {
     width: 100%;
-    height: 10%;
+    height: 100px;
+    background: linear-gradient(180deg, $purple-dark-3 0%,  $purple-dark-3 0% 90%, $purple-dark-2 91%, $purple-dark-1 100%);
     background-color: $purple-dark-3;
     margin-bottom: 30px;
 

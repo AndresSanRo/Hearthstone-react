@@ -36,6 +36,18 @@ html, body {
     background-color: $purple-dark-1;
 }
 
+::-webkit-scrollbar {
+    background-color: $purple-dark-3;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $purple-dark-1;
+    border-radius: 4px;
+    &:hover {
+        background-color: $purple-regular-2;
+    }
+}
+
 body * {
     color: $purple-dark-text-color;
     font-family: $main-font;

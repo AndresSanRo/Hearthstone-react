@@ -1,7 +1,8 @@
 @import '../vars';
 
 .searchBox {
-    background: linear-gradient(0deg, $purple-dark-3 0%,  $purple-dark-3 0% 10%, $purple-dark-2 70%, $purple-dark-1 100%);
+    background-color: $purple-dark-3;
+    border-radius: 5px 5px 0px 0px;
     input {
         color: $purple-dark-text-color;
         font-weight: bold;

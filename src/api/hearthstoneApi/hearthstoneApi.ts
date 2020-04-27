@@ -22,7 +22,6 @@ const getAllCards = (callback: Function, locale: string = locales.enUS): void =>
         Object.keys(response).forEach(set => {            
             cards = [...cards, ...response[set]]
         })
-        cards.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)
         callback(cards);
     })
     .catch(error => {

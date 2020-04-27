@@ -5,7 +5,7 @@ export function Navbar(): JSX.Element {
     return (
       <>
         <div className="navbar">
-            <span>Heathstone react</span>
+            <span>Hearthstone react</span>
         </div>
       </>
     );

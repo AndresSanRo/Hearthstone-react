@@ -3,14 +3,14 @@ import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox'
 import '../../styles/cardWiki/cardWiki.scss'
 import * as _ from 'lodash';
 import { hearthstoneApi } from '../../api';
-import { Card, locales, initCard } from '../../model';
+import { Card, locales } from '../../model';
 
 export function CardWiki(): JSX.Element {
-    const[cards, setCards] = React.useState<Card[]>([initCard]);
+    const[cards, setCards] = React.useState<Card[]>([]);
     const[filteredCards, setFilteredCards] = React.useState<Card[]>([]);
 
     React.useEffect(() => {
-        // hearthstoneApi.getAllCards(setCards, locales.esES);
+        hearthstoneApi.getAllCards(setCards, locales.esES);
     }, [])
 
     React.useEffect(() => {
