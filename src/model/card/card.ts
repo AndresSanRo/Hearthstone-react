@@ -37,11 +37,11 @@ export const initCard: Card = {
     type: "mock",
 }
 
-export enum Types {
+export enum CardTypes {
     "Hero"="Hero",
     "Minion"="Minion",
     "Spell"="Spell",
     "Enchantment"="Enchantment",
     "Weapon"="Weapon",
-    "Hero Power"="Hero Power",
+    "HeroPower"="Hero Power",
 }

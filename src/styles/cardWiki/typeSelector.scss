@@ -1,0 +1,20 @@
+@import '../vars';
+
+.typeSelector {
+    margin: 30px 0px 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &Capsule {
+        border-radius: 15px;
+        background-color: $purple-dark-3;
+        width: 10%;
+        height: 40px;        
+        border: 2px solid $purple-light-3;
+        font-size: 20px;
+    }
+    &Capsule:hover {        
+        background-color: $purple-dark-2;        
+        border: 2px solid $purple-light-3;
+    }
+}
