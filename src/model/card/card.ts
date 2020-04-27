@@ -36,3 +36,12 @@ export const initCard: Card = {
     text: "mock",
     type: "mock",
 }
+
+export enum Types {
+    "Hero"="Hero",
+    "Minion"="Minion",
+    "Spell"="Spell",
+    "Enchantment"="Enchantment",
+    "Weapon"="Weapon",
+    "Hero Power"="Hero Power",
+}

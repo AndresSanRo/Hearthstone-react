@@ -29,6 +29,25 @@ const getAllCards = (callback: Function, locale: string = locales.enUS): void =>
     })
 }
 
+const getCardByType = (type: string, callback: Function, locale: string = locales.enUS): void => {
+    const url = `${baseUrl}/cards/types/${type}?locale=${locale}`;
+    const fetchOtions = {
+        method: 'GET',
+        headers: {
+            ...baseHeaders,
+        }        
+    }
+    fetch(url, fetchOtions)
+    .then(response => response.json())
+    .then((response) => {        
+        callback(response);
+    })
+    .catch(error => {
+        console.error(error);
+    })
+}
+
 export const hearthstoneApi = {
-    getAllCards
+    getAllCards,
+    getCardByType
 };
