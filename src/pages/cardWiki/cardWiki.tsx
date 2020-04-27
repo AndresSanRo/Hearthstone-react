@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import { hearthstoneApi } from '../../api';
 import { Card, locales, initCard } from '../../model';
 
-export function CardWiki() {
+export function CardWiki(): JSX.Element {
     const[cards, setCards] = React.useState<Card[]>([initCard]);
     const[filteredCards, setFilteredCards] = React.useState<Card[]>([]);
 
@@ -26,10 +26,7 @@ export function CardWiki() {
         }
     }
     return (
-        <>
-            <div className="header">
-                <h1>Hearthstone card wiki</h1>
-            </div>            
+        <>         
             <SearchBox 
                 placeholder="Search" 
                 underlined={true} 
@@ -37,7 +34,7 @@ export function CardWiki() {
                 className={ "searchBox" }
             />
             <ul>
-                {filteredCards.length > 0 ? filteredCards.map(c => <li key={c.dbfId}>{c.name}</li>) : <p>loading...</p>}
+                {filteredCards.length > 0 ? filteredCards.map(c => <li key={c.dbfId}>{c.name}</li>) : <p>No results</p>}
             </ul>            
         </>
     );

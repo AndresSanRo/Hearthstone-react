@@ -1,0 +1,16 @@
+@import '../vars';
+
+div.navbar {
+    width: 100%;
+    height: 10%;
+    background-color: $purple-dark-3;
+    margin-bottom: 30px;
+
+    span {
+        font-weight: bold;
+        position: relative;
+        top: 40%;
+        left: 5%;
+        font-size: 2rem;
+    }
+}
