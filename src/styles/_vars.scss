@@ -1,3 +1,51 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
 
 $main-font: 'Open sans';
+
+//App colors
+
+$purple-dark-3: #4a148c;
+$purple-dark-2: #6a1b9a;
+$purple-dark-1: #7b1fa2;
+$purple-regular-3: #8e24aa;
+$purple-regular-2: #9c27b0;
+$purple-regular-1: #ab47bc;
+$purple-light-3: #ba68c8;
+$purple-light-2: #ce93d8;
+$purple-light-1: #e1bee7;
+$purple-dark-text-color: #f3e5f5;
+$purple-light-text-color: #000000;
+
+$pink-dark-3: #880e4f;
+$pink-dark-2: #ad1457;
+$pink-dark-1: #c2185b;
+$pink-regular-3: #d81b60;
+$pink-regular-2: #e91e63;
+$pink-regular-1: #ec407a;
+$pink-light-3: #f06292;
+$pink-light-2: #f48fb1;
+$pink-light-1: #f8bbd0;
+$pink-dark-text-color: #fce4ec;
+$pink-light-text-color: #000000;
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: $purple-dark-1;
+}
+
+body * {
+    color: $purple-dark-text-color;
+    font-family: $main-font;
+}
+
+div#root {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

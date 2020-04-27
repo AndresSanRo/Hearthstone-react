@@ -25,3 +25,14 @@ export interface Card {
 export interface Mechanics {
     name: string,
 }
+
+export const initCard: Card = {
+    cardId: "mock",
+    cardSet: "mock",
+    dbfId: "mock",
+    locale: "mock",
+    name: "mock",
+    playerClass: "mock",
+    text: "mock",
+    type: "mock",
+}

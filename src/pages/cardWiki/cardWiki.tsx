@@ -1,16 +1,16 @@
 import React from 'react';
+import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox'
 import '../../styles/cardWiki/cardWiki.scss'
 import * as _ from 'lodash';
 import { hearthstoneApi } from '../../api';
-import { Card, locales } from '../../model';
-import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox'
+import { Card, locales, initCard } from '../../model';
 
 export function CardWiki() {
-    const[cards, setCards] = React.useState<Card[]>([])
-    const[filteredCards, setFilteredCards] = React.useState<Card[]>([])
+    const[cards, setCards] = React.useState<Card[]>([initCard]);
+    const[filteredCards, setFilteredCards] = React.useState<Card[]>([]);
 
     React.useEffect(() => {
-        hearthstoneApi.getAllCards(setCards, locales.esES);
+        // hearthstoneApi.getAllCards(setCards, locales.esES);
     }, [])
 
     React.useEffect(() => {
@@ -27,8 +27,15 @@ export function CardWiki() {
     }
     return (
         <>
-            <p>Hearthstone card wiki</p>
-            <SearchBox placeholder="Search" underlined={true} onChange={searchCards} />
+            <div className="header">
+                <h1>Hearthstone card wiki</h1>
+            </div>            
+            <SearchBox 
+                placeholder="Search" 
+                underlined={true} 
+                onChange={searchCards} 
+                className={ "searchBox" }
+            />
             <ul>
                 {filteredCards.length > 0 ? filteredCards.map(c => <li key={c.dbfId}>{c.name}</li>) : <p>loading...</p>}
             </ul>            

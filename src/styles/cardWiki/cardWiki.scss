@@ -1,6 +1,25 @@
 @import '../vars';
 
-li {
-    
-    font-family: $main-font;
+.header {
+    text-align: center;
+    margin: auto;
+}
+
+.searchBox {
+    background: linear-gradient(0deg, $purple-dark-3 0%,  $purple-dark-3 0% 10%, $purple-dark-2 70%, $purple-dark-1 100%);
+    input {
+        color: $purple-dark-text-color;
+        font-weight: bold;
+    }
+    input::placeholder {
+        color: #bdbdbd;
+    }
+}
+.searchbox, .root- {
+    &40 {
+        border-bottom: 1px solid $purple-regular-1 !important;
+    }
+    &46::after {
+        border-bottom: 2px solid $purple-regular-1 !important;
+    }
 }
