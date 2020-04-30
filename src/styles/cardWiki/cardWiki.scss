@@ -22,3 +22,11 @@
 .spinner {
     border-color: $purple-regular-1 !important;
 }
+
+.cardGridCol {
+    display: flex;
+    direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0px 20px 0px;
+}

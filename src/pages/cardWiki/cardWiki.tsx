@@ -46,13 +46,13 @@ export function CardWiki(): JSX.Element {
                 onChange={searchCards} 
                 className={ "searchBox" }
             />            
-            <div className="ms-Grid" dir="ltr">
+            <div className="ms-Grid cardGrid" dir="ltr">
                 {
                 !loading && filteredCards.length > 0 ? 
                     (
                         filteredCards.map(c => {
                             return (
-                                <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">
+                                <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3 cardGridCol">
                                     <HsCard hsCard={c}></HsCard>
                                 </div>
                             );
