@@ -1,14 +1,16 @@
 import React from 'react';
 import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox'
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import '../../styles/cardWiki/cardWiki.scss'
 import * as _ from 'lodash';
 import { hearthstoneApi } from '../../api';
-import { Card, locales, CardTypes } from '../../model';
+import { IHsCard, locales, CardTypes } from '../../model';
 import { TypeSelector } from './typeSelector';
+import { HsCard } from './hsCard';
 
 export function CardWiki(): JSX.Element {
-    const[cards, setCards] = React.useState<Card[]>([]);
-    const[filteredCards, setFilteredCards] = React.useState<Card[]>([]);
+    const[cards, setCards] = React.useState<IHsCard[]>([]);
+    const[filteredCards, setFilteredCards] = React.useState<IHsCard[]>([]);
     const[type, setType] = React.useState<string>(CardTypes.Hero);
     const[loading, setLoading] = React.useState<boolean>(false);
 
@@ -34,29 +36,37 @@ export function CardWiki(): JSX.Element {
             setFilteredCards(cards);
         }
     }
-    if (loading) {
-        return (
-            <>
-                <span>loading...</span>
-            </>
-        );
-    }
+    
     return (
-        <>         
-            <div className="ms-Grid">                
-                <TypeSelector setType={setType} />            
-                <div className="ms-Grid-row">
-                    <SearchBox 
-                        placeholder="Search" 
-                        underlined={true} 
-                        onChange={searchCards} 
-                        className={ "searchBox" }
-                    />
-                </div>                
-                <ul>
-                    {filteredCards.length > 0 ? filteredCards.map(c => <li key={c.dbfId}>{c.name}</li>) : <p>No results</p>}
-                </ul>            
-            </div>            
+        <>                    
+            <TypeSelector setType={setType} />            
+            <SearchBox 
+                placeholder="Search" 
+                underlined={true} 
+                onChange={searchCards} 
+                className={ "searchBox" }
+            />            
+            <div className="ms-Grid" dir="ltr">
+                {
+                !loading && filteredCards.length > 0 ? 
+                    (
+                        filteredCards.map(c => {
+                            return (
+                                <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg3">
+                                    <HsCard hsCard={c}></HsCard>
+                                </div>
+                            );
+                        }) 
+                    )
+                    : 
+                    (
+                        <Spinner 
+                            className="spinner" 
+                            size={SpinnerSize.large} 
+                        />
+                    )
+                }
+            </div>                               
         </>
     );
 }

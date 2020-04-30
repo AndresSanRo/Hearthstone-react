@@ -1,5 +1,5 @@
 import { secrets } from '../../secrets'
-import { Card, locales } from '../../model';
+import { IHsCard, locales } from '../../model';
 
 const baseUrl = `https://${secrets.host}`;
 const baseHeaders = {
@@ -18,7 +18,7 @@ const getAllCards = (callback: Function, locale: string = locales.enUS): void =>
     fetch(url, fetchOtions)
     .then(response => response.json())
     .then((response) => {
-        let cards: Card[] = [];
+        let cards: IHsCard[] = [];
         Object.keys(response).forEach(set => {            
             cards = [...cards, ...response[set]]
         })

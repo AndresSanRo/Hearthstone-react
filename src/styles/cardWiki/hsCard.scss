@@ -1,0 +1,14 @@
+@import '../vars';
+
+.hsCard {
+    height: 500px;
+    >div {
+        background-color: $purple-dark-2;
+        &:hover {
+            background-color: $purple-dark-3;
+        }
+        >div {        
+            text-align: center;
+        }
+    }    
+}

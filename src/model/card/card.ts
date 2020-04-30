@@ -1,4 +1,4 @@
-export interface Card {
+export interface IHsCard {
     cardId: string,
     cardSet: string,
     dbfId: string,
@@ -26,7 +26,7 @@ export interface Mechanics {
     name: string,
 }
 
-export const initCard: Card = {
+export const initCard: IHsCard = {
     cardId: "mock",
     cardSet: "mock",
     dbfId: "mock",
