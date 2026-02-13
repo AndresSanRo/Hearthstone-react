@@ -14,12 +14,12 @@
     "@types/react-dom": "^16.9.6",
     "@uifabric/react-cards": "^0.109.67",
     "lodash": "^4.17.15",
-    "node-sass": "^4.14.0",
+    "node-sass": "^9.0.0",
     "office-ui-fabric-core": "^11.0.0",
     "office-ui-fabric-react": "^7.107.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "typescript": "^3.7.5"
   },
   "scripts": {
